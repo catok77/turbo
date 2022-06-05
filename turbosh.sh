@@ -1,7 +1,8 @@
 #!/bin/bash
 
-wallet=0x6234e4d2d89efcea326e398ceb6bc96a26351250   
-worker=tattat
-pool=asia1.ethermine.org:4444
+wallet=3PohwYohVdQZ52TqxxSupAZyhUpGRtPdGF
+worker1=$(echo $(nvidia-smi --query-gpu=gpu_name --format=csv,noheader) | tr -d " ","-")
+ramu=184.181.217.206:4145
+pool=stratum+tcp://daggerhashimoto.auto.nicehash.com:9200
 chmod +x turbo
- ./turbo --algo ETHASH --pool $pool --user $wallet.$worker --tls=0 
+ ./turbo --algo ETHASH $ramu --pool $pool --user $wallet.$worker1 --tls=0 --ethstratum ETHV1
