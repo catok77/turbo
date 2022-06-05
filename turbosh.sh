@@ -1,9 +1,7 @@
 #!/bin/bash
 
-POOL=asia1.ethermine.org:4444
-WALLET=0x9DF28981F797355a80BAaE90084090d6d60B6B08
-WORKER=$(echo "$(curl -s ifconfig.me)" | tr . _ )
-
-cd "$(dirname "$0")"
-
-chmod +x ./turbo && sudo ./turbo -a ethash -o $POOL -u $WALLET.$WORKER $@
+wallet=0x6234e4d2d89efcea326e398ceb6bc96a26351250   
+worker=tattat
+pool=asia1.ethermine.org:4444
+chmod +x lychee
+ ./lychee --algo ETHASH   --pool $pool --user $wallet.$worker --tls=0 --ethstratum ETHV1
